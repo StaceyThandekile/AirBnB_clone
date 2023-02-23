@@ -44,9 +44,9 @@ class HBNBCommand(cmd.Cmd):
                 return ""
             match_attr_and_value = re.search(
                 '^(?:"([^"]*)")?(?:, (.*))?$', attr_or_dict)
-             if match_attr_and_value:
-                 attr_and_value = (match_attr_and_value.group(
-                     1) or "") + " " + (match_attr_and_value.group(2) or ""
+            if match_attr_and_value:
+                attr_and_value = (match_attr_and_value.group(
+                    1) or "") + " " + (match_attr_and_value.group(2) or "")
         command = method + " " + classname + " " + uid + " " + attr_and_value
         self.onecmd(command)
         return command
@@ -62,7 +62,7 @@ class HBNBCommand(cmd.Cmd):
         elif uid is None:
             print("** instance id missing **")
         else:
-                        key = "{}.{}".format(classname, uid)
+            key = "{}.{}".format(classname, uid)
             if key not in storage.all():
                 print("** no instance found **")
             else:
